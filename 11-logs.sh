@@ -20,10 +20,16 @@ VALIDATE(){
     fi
 }
 
-yum install mysql -y
+if [ $ID -ne 0 ]
+then
+    echo "Error:: Please run this script with root access"
+    exit 1
+fi
 
-VALIDATE $? "Installing MySql" &>>LOGFILE
+yum install mysql -y &>>LOGFILE
 
-yum install git -y 
+VALIDATE $? "Installing MySql" 
 
-VALIDATE $? "Installing GIT" &>>LOGFILE
+yum install git -y &>>LOGFILE
+
+VALIDATE $? "Installing GIT" 
