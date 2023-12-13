@@ -1,6 +1,9 @@
 #!/bin/bash
 
 ID=$(id -u)
+DATE=$($0)
+
+echo "Script Name: $DATE"
 
 if [ $ID -ne 0 ]
 then
