@@ -13,10 +13,10 @@ echo "Script started execution at $TIMESTAMP" &>> $LOGFILE
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "Error:: $2... $R Failed $N"
+        echo -e "Error:: $2... $R Failed $N"
         exit 1
     else
-        echo "Success:: $2... $G Success $N"
+        echo -e "Success:: $2... $G Success $N"
     fi
 }
 
